@@ -36,6 +36,12 @@ You can also embed plots, for example:
 
 ```{r pressure, echo=FALSE}
 groups <- NbClust(deaths, distance = "euclidean", min.nc = 2, max.nc = 10, method = "complete", index ="all")
+groups
+```
+```{r pressure, echo=FALSE}
+# Método del codo
+fviz_nbclust(deaths, kmeans, method = "wss") +
+labs(subtitle = "Número óptimo de clusters elbow-method")
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
